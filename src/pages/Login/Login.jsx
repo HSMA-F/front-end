@@ -17,6 +17,9 @@ export default function Login() {
     const [sucess,setSucess]= React.useState({
         mensagem:''
     });
+    const [fail,setFail]= React.useState({
+      mensagem:''
+  });
     const[user,setUser]=React.useState({
         name:'',
         password:'',
@@ -32,16 +35,24 @@ export default function Login() {
         "name": user.name,
         "password": user.password
     }).then(res => {
-        if(res.data.ok==true){
+        if(res.data.ok===true){
             setStatus({
                 type:'',
                 mensagem:""
             })
+            setFail({
+              mensagem:""
+          })
             setSucess({
                 mensagem:"VOCÊ ESTÁ LOGADO!!"
             })
         }
-    }).catch(e=>console.log(e))
+    }).catch(e=>{
+      console.log(e)
+      setFail({
+        mensagem:"Usuário ou senha não encontrado!!"
+    })
+    })
   };
    async function validate(){
       let schema = yup.object().shape({
@@ -100,6 +111,7 @@ export default function Login() {
               <Link href="/Singup">{"Não tem uma conta? Cadastre-se"}</Link>
           </Grid>
           <p className="sucess">{sucess.mensagem}</p>
+          <p className="error">{fail.mensagem}</p>
         </Box>
       </Container>
     </div>
