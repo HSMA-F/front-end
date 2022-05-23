@@ -1,0 +1,20 @@
+
+.login{
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    font-family: Roboto;
+} 
+
+.main{
+    margin: 80px;
+}
+
+.error{
+    color:red
+
+}
+.sucess{
+    color: green;
+}
