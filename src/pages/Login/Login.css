@@ -1,20 +1,18 @@
-
-.login{
-    display: block;
-    text-align: center;
-    padding-top: 10px;
-    margin-bottom: -10px;
-    font-family: Roboto;
-} 
-
-.main{
-    margin: 80px;
+.login {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: -10px;
+  font-family: Roboto;
 }
 
-.error{
-    color:red
-
+.main {
+  margin: 80px;
 }
-.sucess{
-    color: green;
+
+.error {
+  color: red;
+}
+.sucess {
+  color: green;
 }
